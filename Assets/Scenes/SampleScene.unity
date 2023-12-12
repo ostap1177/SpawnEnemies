@@ -278,6 +278,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6891130832921147769, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
   m_PrefabInstance: {fileID: 6891130832834061849}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &449929057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6891130832921147772, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
+  m_PrefabInstance: {fileID: 6891130832834061849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449929056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1415df12ea04bca805d074b05c8d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &449929062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -506,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _secondsWait: 2
   _enemy: {fileID: -4254646723761695292, guid: 012ccab1d124d4786b395ce0821b468b, type: 3}
+  _destroyer: {fileID: 449929057}
   _spawnPoints:
   - {fileID: 221658132}
   - {fileID: 271627171}
@@ -713,15 +725,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891130832921147773, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6891130832921147773, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.52
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6891130832921147773, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.62
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 6891130832921147773, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
       propertyPath: m_LocalRotation.w

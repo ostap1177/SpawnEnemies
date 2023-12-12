@@ -11,6 +11,8 @@ public class SpawnerEnemies : MonoBehaviour
 
     [SerializeField] private Transform[] _spawnPoints;
 
+    Vector3 _directionDestroyer;
+
     private void Start()
     {
         StartCoroutine(Create(_secondsWait));
@@ -25,7 +27,10 @@ public class SpawnerEnemies : MonoBehaviour
             foreach (var spawnPoint in _spawnPoints)
             {
                 Enemy enemy = Instantiate(_enemy, spawnPoint.position, Quaternion.identity);
-                enemy.SetTarget(_destroyer.transform.position);
+                _directionDestroyer = new Vector3(_destroyer.transform.position.x - spawnPoint.position.x,
+                    _destroyer.transform.position.y - spawnPoint.position.y,
+                    _destroyer.transform.position.z - spawnPoint.position.z);  
+                enemy.SetTargetDirection(_directionDestroyer);
 
                 yield return waitForSeconds;
             }

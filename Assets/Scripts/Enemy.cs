@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     public Vector3 TargetPosition => _targetPosition;
 
-    public void SetTarget(Vector3 position)
+    public void SetTargetDirection(Vector3 position)
     {
         _targetPosition = position;
     }
