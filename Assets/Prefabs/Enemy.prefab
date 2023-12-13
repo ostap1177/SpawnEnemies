@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _destroyerTarget: {fileID: 6891130832921147772, guid: edf65d93c07b24841a0d925236839f0a, type: 3}
 --- !u!114 &-4254646723761695292
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
@@ -10,9 +8,13 @@ public class Mover : MonoBehaviour
     private Vector3 _destroyerTarget;
     private Enemy _enemy;
 
-    private void Start()
+    private void Awake()
     {
         _enemy = GetComponent<Enemy>();
+    }
+
+    private void Start()
+    {
         _destroyerTarget = _enemy.TargetPosition;
     }
 

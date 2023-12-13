@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpawnerEnemies : MonoBehaviour
 {
@@ -15,22 +13,21 @@ public class SpawnerEnemies : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Create(_secondsWait));
+        StartCoroutine(Create());
     }
 
-    private IEnumerator Create (float seconds)
+    private IEnumerator Create ()
     {
-        WaitForSeconds waitForSeconds = new WaitForSeconds(seconds);
+        WaitForSeconds waitForSeconds = new WaitForSeconds(_secondsWait);
 
         while (true)
         {
             foreach (var spawnPoint in _spawnPoints)
             {
                 Enemy enemy = Instantiate(_enemy, spawnPoint.position, Quaternion.identity);
-                _directionDestroyer = new Vector3(_destroyer.transform.position.x - spawnPoint.position.x,
-                    _destroyer.transform.position.y - spawnPoint.position.y,
-                    _destroyer.transform.position.z - spawnPoint.position.z);  
-                enemy.SetTargetDirection(_directionDestroyer);
+                _directionDestroyer =_destroyer.transform.position - spawnPoint.localPosition;
+                //_directionDestroyer = new Vector3(_destroyer.transform.position.x - spawnPoint.position.x,_destroyer.transform.position.y - spawnPoint.position.y,_destroyer.transform.position.z - spawnPoint.position.z);
+                enemy.SetTarget(_directionDestroyer);
 
                 yield return waitForSeconds;
             }
